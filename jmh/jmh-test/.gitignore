@@ -1,0 +1,6 @@
+target/
+*.iml
+.idea/*
+!.idea/externalDependencies.xml
+!.idea/runConfigurations
+.DS_Store
