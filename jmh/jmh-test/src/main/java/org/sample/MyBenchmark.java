@@ -57,7 +57,7 @@ import org.openjdk.jmh.annotations.Threads;
 import org.openjdk.jmh.annotations.Warmup;
 
 @Warmup(iterations = 2, time = 2, timeUnit = TimeUnit.SECONDS)
-@Measurement(iterations = 4, time = 5, timeUnit = TimeUnit.SECONDS)
+@Measurement(iterations = 5, time = 5, timeUnit = TimeUnit.SECONDS)
 @Fork(1) // 2
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
@@ -73,9 +73,9 @@ public class MyBenchmark {
 
     private static final String userJson = readResoucesAsString("/user.json");
 
-    private static final TypeReference<User> mapTypeReference = new TypeReference<User>() {
+    private static final TypeReference<User> typeReferenceUser = new TypeReference<User>() {
     };
-    private static final ObjectReader objectReaderMap = objectMapper.readerFor(mapTypeReference);
+    private static final ObjectReader objectReaderUser = objectMapper.readerFor(typeReferenceUser);
 
     @Benchmark
     public void measure_readValue_class_JavaMap() throws JsonProcessingException {
@@ -103,13 +103,13 @@ public class MyBenchmark {
     }
 
     @Benchmark
-    public void measure_readValue_TypeReference_Map() throws JsonProcessingException {
-        User user = objectMapper.readValue(userJson, mapTypeReference);
+    public void measure_readValue_TypeReference_User() throws JsonProcessingException {
+        User user = objectMapper.readValue(userJson, typeReferenceUser);
     }
 
     @Benchmark
-    public void measure_readValue_ObjectReader_Map() throws JsonProcessingException {
-        Object value = objectReaderMap.readValue(userJson);
+    public void measure_readValue_ObjectReader_User() throws JsonProcessingException {
+        Object value = objectReaderUser.readValue(userJson);
     }
 
     public static String readResoucesAsString(String path) {

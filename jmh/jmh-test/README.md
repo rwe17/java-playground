@@ -19,13 +19,13 @@ java -jar target/benchmarks.jar
 ## Result on my machine (MacBook i5)
 ```
 Benchmark                                               Mode  Cnt  Score   Error  Units
-MyBenchmark.measure_readTree                            avgt    4  2,422 ± 0,758  us/op
-MyBenchmark.measure_readValue_ObjectReader_Map          avgt    4  2,152 ± 1,037  us/op  <-- fastest
-MyBenchmark.measure_readValue_TypeReference_Map         avgt    4  2,322 ± 0,826  us/op
-MyBenchmark.measure_readValue_class_JavaMap             avgt    4  2,371 ± 0,334  us/op
-MyBenchmark.measure_readValue_class_User                avgt    4  2,258 ± 0,565  us/op
-MyBenchmark.measure_readValue_class_UserWithProperties  avgt    4  2,257 ± 0,268  us/op
-MyBenchmark.measure_readValue_class_VavrMap             avgt    4  2,736 ± 0,295  us/op  <-- slowest
+MyBenchmark.measure_readTree                            avgt    5  2,281 ± 0,369  us/op
+MyBenchmark.measure_readValue_ObjectReader_User         avgt    5  1,924 ± 0,248  us/op
+MyBenchmark.measure_readValue_TypeReference_User        avgt    5  2,031 ± 0,040  us/op
+MyBenchmark.measure_readValue_class_JavaMap             avgt    5  2,290 ± 0,108  us/op
+MyBenchmark.measure_readValue_class_User                avgt    5  2,080 ± 0,327  us/op
+MyBenchmark.measure_readValue_class_UserWithProperties  avgt    5  2,010 ± 0,121  us/op
+MyBenchmark.measure_readValue_class_VavrMap             avgt    5  2,393 ± 0,045  us/op
 ```
 
 ## links
