@@ -1,2 +1,3 @@
 # java-playground
-Playground summarized different smal java projects
+
+Playground containing some small java code snippets only
